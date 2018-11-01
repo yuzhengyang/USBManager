@@ -1,0 +1,57 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.27004.2005
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "USBManager", "USBManager\USBManager.csproj", "{27F391C5-9C1B-4843-A836-247B4159953D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "USBManager.Models", "USBManager.Models\USBManager.Models.csproj", "{4187567A-8B4F-4001-A587-CF3A5C67D81C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "USBManager.Utils", "USBManager.Utils\USBManager.Utils.csproj", "{9DD2323F-16FA-44FA-8922-9F73CD0850BE}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "USBManager.Service", "USBManager.Service\USBManager.Service.csproj", "{2EF5F66B-2663-46C7-91DA-78AC7524C861}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "模型", "模型", "{831D0260-6218-467D-A57F-5A529E3D02EE}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "工具类", "工具类", "{39B72720-101C-4FC4-9DD4-DFC51B731F99}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "USBManager.UI", "USBManager.UI\USBManager.UI.csproj", "{C18F26AA-86EF-4D9D-87C7-F53F4095199F}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{27F391C5-9C1B-4843-A836-247B4159953D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{27F391C5-9C1B-4843-A836-247B4159953D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{27F391C5-9C1B-4843-A836-247B4159953D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{27F391C5-9C1B-4843-A836-247B4159953D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4187567A-8B4F-4001-A587-CF3A5C67D81C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4187567A-8B4F-4001-A587-CF3A5C67D81C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4187567A-8B4F-4001-A587-CF3A5C67D81C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4187567A-8B4F-4001-A587-CF3A5C67D81C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9DD2323F-16FA-44FA-8922-9F73CD0850BE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9DD2323F-16FA-44FA-8922-9F73CD0850BE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9DD2323F-16FA-44FA-8922-9F73CD0850BE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9DD2323F-16FA-44FA-8922-9F73CD0850BE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2EF5F66B-2663-46C7-91DA-78AC7524C861}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2EF5F66B-2663-46C7-91DA-78AC7524C861}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2EF5F66B-2663-46C7-91DA-78AC7524C861}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2EF5F66B-2663-46C7-91DA-78AC7524C861}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C18F26AA-86EF-4D9D-87C7-F53F4095199F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C18F26AA-86EF-4D9D-87C7-F53F4095199F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C18F26AA-86EF-4D9D-87C7-F53F4095199F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C18F26AA-86EF-4D9D-87C7-F53F4095199F}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{4187567A-8B4F-4001-A587-CF3A5C67D81C} = {831D0260-6218-467D-A57F-5A529E3D02EE}
+		{9DD2323F-16FA-44FA-8922-9F73CD0850BE} = {39B72720-101C-4FC4-9DD4-DFC51B731F99}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {4E3D06CE-314C-4DB8-989E-9CCA9798AAF2}
+	EndGlobalSection
+EndGlobal
