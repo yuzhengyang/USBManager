@@ -43,7 +43,7 @@ namespace USBManager.Service.Commons
         internal static string EnvironmentUserName = ComputerInfoTool.UserName();
         internal static string UserDomainName = ComputerInfoTool.UserDomainName();
 
-        internal static Log Log = new Log(LogLevel.All, LogLevel.All);
+        internal static Log Log = new Log();
 
         internal static USBListener USBListener = new USBListener(DeviceAct.ChangeDevice, DeviceAct.InsertDevice, DeviceAct.RemoveDevice);
         internal static USBStorageListener USBStorageListener = new USBStorageListener(StorageAct.ChangeDevice, StorageAct.InsertDevice, StorageAct.RemoveDevice);

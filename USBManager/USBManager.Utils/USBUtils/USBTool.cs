@@ -6,6 +6,7 @@ using System.Collections.Generic;
 using System.Diagnostics;
 using System.IO;
 using USBManager.Models.USBDeviceModels;
+using USBManager.Utils.Commons;
 using USBManager.Utils.DevconUtils;
 
 namespace USBManager.Utils.USBUtils
