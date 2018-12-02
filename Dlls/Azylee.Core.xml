@@ -48,7 +48,7 @@
             启动最新版本程序
             </summary>
             <param name="route">路径：程序版本文件夹路径</param>
-            <param name="startfilename">可执行文件名</param>
+            <param name="exeFile">可执行文件名</param>
             <returns></returns>
         </member>
         <member name="M:Azylee.Core.AppUtils.AppLaunchTool.HasNewVersion(System.String,System.String)">
@@ -59,12 +59,12 @@
             <param name="startfilename">可执行文件名</param>
             <returns></returns>
         </member>
-        <member name="M:Azylee.Core.AppUtils.AppLaunchTool.GetNewVersion(System.String,System.String)">
+        <member name="M:Azylee.Core.AppUtils.AppLaunchTool.GetNewVersion(System.String,System.String,System.Version@,System.String@)">
             <summary>
             获取最新版本号
             </summary>
             <param name="route">路径：程序版本文件夹路径</param>
-            <param name="startfilename">可执行文件名</param>
+            <param name="exeFile">可执行文件名</param>
             <returns></returns>
         </member>
         <member name="T:Azylee.Core.AppUtils.AppSettleTool">
@@ -516,6 +516,69 @@
             <param name="unit"></param>
             <param name="digits"></param>
             <returns></returns>
+        </member>
+        <member name="T:Azylee.Core.DrawingUtils.ImageUtils.IMG">
+            <summary>
+            图片操作工具类
+            </summary>
+        </member>
+        <member name="M:Azylee.Core.DrawingUtils.ImageUtils.IMG.Thumbnail(System.Drawing.Image,System.Int32,System.Int32,System.Drawing.Drawing2D.InterpolationMode,System.Drawing.Drawing2D.SmoothingMode)">
+            <summary>
+            创建缩略图
+            </summary>
+            <param name="img"></param>
+            <param name="width"></param>
+            <param name="height"></param>
+            <param name="interpolation"></param>
+            <param name="smoothing"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Azylee.Core.DrawingUtils.ImageUtils.IMG.Compression(System.Drawing.Bitmap,System.Int32)">
+            <summary>
+            压缩图片
+            </summary>
+            <param name="bitmap"></param>
+            <param name="quality">0-100</param>
+            <param name="format"></param>
+            <returns></returns>
+        </member>
+        <member name="T:Azylee.Core.DrawingUtils.ImageUtils.ScreenCapture">
+            <summary>
+            屏幕捕获类
+            </summary>
+        </member>
+        <member name="M:Azylee.Core.DrawingUtils.ImageUtils.ScreenCapture.Capture">
+            <summary>
+            Winform 屏幕截图
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Azylee.Core.DrawingUtils.ImageUtils.ScreenCapture.BitBlt(System.IntPtr,System.Int32,System.Int32,System.Int32,System.Int32,System.IntPtr,System.Int32,System.Int32,System.Int32)">
+            <summary>
+            把当前屏幕捕获到位图对象中
+            </summary>
+            <param name="hdcDest">目标设备的句柄</param>
+            <param name="nXDest">目标对象的左上角的X坐标</param>
+            <param name="nYDest">目标对象的左上角的X坐标</param>
+            <param name="nWidth">目标对象的矩形的宽度</param>
+            <param name="nHeight">目标对象的矩形的长度</param>
+            <param name="hdcSrc">源设备的句柄</param>
+            <param name="nXSrc">源对象的左上角的X坐标</param>
+            <param name="nYSrc">源对象的左上角的X坐标</param>
+            <param name="dwRop">光栅的操作值</param>
+            <returns></returns>
+        </member>
+        <member name="M:Azylee.Core.DrawingUtils.ImageUtils.ScreenCapture.CaptureDC">
+            <summary>
+            屏幕捕获到位图对象中
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Azylee.Core.DrawingUtils.ImageUtils.ScreenCapture.DrawCursorImageToScreenImage(System.Drawing.Graphics@)">
+            <summary>  
+            将鼠标指针形状绘制到屏幕截图上  
+            </summary>  
+            <param name="g"></param>  
         </member>
         <member name="T:Azylee.Core.FormUtils.FormManTool">
             <summary>
@@ -1126,44 +1189,6 @@
             <returns></returns>
         </member>
         <!-- 对于成员“M:Azylee.Core.IOUtils.ImageUtils.RotateImageTool.Rotate(System.String,System.String,System.Int32)”忽略有格式错误的 XML 注释 -->
-        <member name="T:Azylee.Core.IOUtils.ImageUtils.ScreenCapture">
-            <summary>
-            屏幕捕获类
-            </summary>
-        </member>
-        <member name="M:Azylee.Core.IOUtils.ImageUtils.ScreenCapture.BitBlt(System.IntPtr,System.Int32,System.Int32,System.Int32,System.Int32,System.IntPtr,System.Int32,System.Int32,System.Int32)">
-            <summary>
-            把当前屏幕捕获到位图对象中
-            </summary>
-            <param name="hdcDest">目标设备的句柄</param>
-            <param name="nXDest">目标对象的左上角的X坐标</param>
-            <param name="nYDest">目标对象的左上角的X坐标</param>
-            <param name="nWidth">目标对象的矩形的宽度</param>
-            <param name="nHeight">目标对象的矩形的长度</param>
-            <param name="hdcSrc">源设备的句柄</param>
-            <param name="nXSrc">源对象的左上角的X坐标</param>
-            <param name="nYSrc">源对象的左上角的X坐标</param>
-            <param name="dwRop">光栅的操作值</param>
-            <returns></returns>
-        </member>
-        <member name="M:Azylee.Core.IOUtils.ImageUtils.ScreenCapture.Capture">
-            <summary>
-            屏幕捕获到位图对象中
-            </summary>
-            <returns></returns>
-        </member>
-        <member name="M:Azylee.Core.IOUtils.ImageUtils.ScreenCapture.MakeThumbnail(System.Drawing.Image,System.Int32,System.Int32)">
-            <summary>
-            压缩图片
-            </summary>
-            <param name="originalImage"></param>
-        </member>
-        <member name="M:Azylee.Core.IOUtils.ImageUtils.ScreenCapture.DrawCursorImageToScreenImage(System.Drawing.Graphics@)">
-            <summary>  
-            将鼠标指针形状绘制到屏幕截图上  
-            </summary>  
-            <param name="g"></param>  
-        </member>
         <member name="M:Azylee.Core.IOUtils.ImageUtils.ThunbnailTool.Normal(System.Drawing.Bitmap,System.Int32,System.Int32,System.String,System.Drawing.Drawing2D.InterpolationMode,System.Drawing.Drawing2D.SmoothingMode)">
             <summary>
             标准缩略图生成
@@ -1301,6 +1326,13 @@
             3、Log.i("information");输出消息
             </summary>
         </member>
+        <member name="T:Azylee.Core.LogUtils.SimpleLogUtils.Log.LogEventDelegate">
+            <summary>
+            日志输出回调方法
+            </summary>
+            <param name="type">类型</param>
+            <param name="msg">内容</param>
+        </member>
         <member name="M:Azylee.Core.LogUtils.SimpleLogUtils.Log.#ctor(System.Boolean,Azylee.Core.LogUtils.SimpleLogUtils.LogLevel,Azylee.Core.LogUtils.SimpleLogUtils.LogLevel)">
             <summary>
             初始化 Log 工具（不建议使用）
@@ -1309,12 +1341,13 @@
             <param name="logLevel"></param>
             <param name="writeLevel"></param>
         </member>
-        <member name="M:Azylee.Core.LogUtils.SimpleLogUtils.Log.#ctor(Azylee.Core.LogUtils.SimpleLogUtils.LogLevel,Azylee.Core.LogUtils.SimpleLogUtils.LogLevel)">
+        <member name="M:Azylee.Core.LogUtils.SimpleLogUtils.Log.#ctor(Azylee.Core.LogUtils.SimpleLogUtils.LogLevel,Azylee.Core.LogUtils.SimpleLogUtils.LogLevel,Azylee.Core.LogUtils.SimpleLogUtils.Log.LogEventDelegate)">
             <summary>
             初始化 Log 工具
             </summary>
             <param name="console">控制台输出级别</param>
             <param name="file">文件输出级别</param>
+            <param name="action">日志输出回调</param>
         </member>
         <member name="M:Azylee.Core.LogUtils.SimpleLogUtils.Log.SetLogPath(System.String)">
             <summary>
@@ -1882,7 +1915,12 @@
             <param name="raw"><b>true</b> if the returned string should ony contain the raw bytes, <b>false</b> if the returned string should also contain a hexadecimal representation.</param>
             <returns>An instance of the <see cref="T:System.String"/> class.</returns>
         </member>
-        <member name="M:Azylee.Core.ProcessUtils.ProcessStarter.NewProcess(System.String,System.String)">
+        <member name="T:Azylee.Core.ProcessUtils.ProcessStarter">
+            <summary>
+            进程启动工具
+            </summary>
+        </member>
+        <member name="M:Azylee.Core.ProcessUtils.ProcessStarter.NewProcess(System.String,System.String,System.String,System.String,System.String)">
             <summary>
             创建进程
             </summary>
@@ -2128,6 +2166,25 @@
             <summary>
             Sleep（单位：分）
             </summary>
+        </member>
+        <member name="T:Azylee.Core.WindowsUtils.AdminUtils.AdminTool">
+            <summary>
+            Administrator 工具
+            </summary>
+        </member>
+        <member name="M:Azylee.Core.WindowsUtils.AdminUtils.AdminTool.CheckPasswords(System.Collections.Generic.List{System.String})">
+            <summary>
+            检查 Administrator 密码是否正确
+            </summary>
+            <param name="pwds"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Azylee.Core.WindowsUtils.AdminUtils.AdminTool.CheckPassword(System.String)">
+            <summary>
+            检查 Administrator 密码是否正确
+            </summary>
+            <param name="password"></param>
+            <returns></returns>
         </member>
         <member name="T:Azylee.Core.WindowsUtils.APIUtils.ApplicationAPI">
             <summary>
@@ -2683,7 +2740,7 @@
         </member>
         <member name="M:Azylee.Core.WindowsUtils.BrowserUtils.BrowserSelector.StoneAgeIE(System.String@)">
             <summary>
-            时期时代浏览器IE
+            石器时代浏览器IE
             </summary>
             <param name="browser"></param>
             <returns></returns>
@@ -2721,7 +2778,15 @@
             <param name="content">查询内容</param>
             <returns></returns>
         </member>
-        <member name="M:Azylee.Core.WindowsUtils.CMDUtils.CMDProcessTool.GetProcess">
+        <member name="M:Azylee.Core.WindowsUtils.CMDUtils.CMDNetstatTool.GetAvailablePorts(System.Byte,System.Int32)">
+            <summary>
+            随机获取可用的端口号
+            </summary>
+            <param name="count">需要的端口号个数</param>
+            <param name="start">起始端口</param>
+            <returns></returns>
+        </member>
+        <member name="M:Azylee.Core.WindowsUtils.CMDUtils.CMDProcessTool.GetProcess(System.String)">
             <summary>
             创建cmd的进程
             </summary>
@@ -3030,6 +3095,20 @@
             <summary>
             获取网卡信息
             【名称、描述、物理地址（Mac）、Ip地址、网关地址】
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Azylee.Core.WindowsUtils.InfoUtils.NetCardInfoTool.InternetGetConnectedState(System.Int32@,System.Int32)">
+            <summary>
+            获取网络连接状态
+            </summary>
+            <param name="dwFlag"></param>
+            <param name="dwReserved"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Azylee.Core.WindowsUtils.InfoUtils.NetCardInfoTool.LocalConnectionStatus">
+            <summary>
+            获取网络连接状态
             </summary>
             <returns></returns>
         </member>

@@ -33,9 +33,16 @@ namespace USBManager.Utils.USBUtils
                         }
                     }
                 }
+                USBStorageTool.Bind(ref list1);
                 return list1;
             }
-            if (ListTool.HasElements(list1)) return list1;
+            if (ListTool.HasElements(list1))
+            {
+                USBStorageTool.Bind(ref list1);
+                return list1;
+            }
+
+            USBStorageTool.Bind(ref list2);
             return list2;
         }
         /// <summary>
@@ -47,7 +54,7 @@ namespace USBManager.Utils.USBUtils
             List<USBDeviceModel> list = null;
             List<string> temp = new List<string>();
 
-            Process process = ProcessStarter.NewProcess(DevconExeSelector.GetExe(), " FIND USB*");
+            Process process = ProcessStarter.NewProcess(DevconExeSelector.GetExe(), " FIND USB*", R.Domain, R.Username, R.Password);
             ProcessTool.SleepKill(process, 5);
             ProcessStarter.Execute(process, new Action<string>((x) =>
             {
@@ -79,7 +86,7 @@ namespace USBManager.Utils.USBUtils
             List<USBDeviceModel> list = null;
             List<string> temp = new List<string>();
 
-            Process process = ProcessStarter.NewProcess(DevconExeSelector.GetExe(), " STATUS USB*");
+            Process process = ProcessStarter.NewProcess(DevconExeSelector.GetExe(), " STATUS USB*", R.Domain, R.Username, R.Password);
             ProcessTool.SleepKill(process, 5);
             ProcessStarter.Execute(process, new Action<string>((x) =>
             {
@@ -119,7 +126,7 @@ namespace USBManager.Utils.USBUtils
         public static bool Enable(string id)
         {
             List<string> temp = new List<string>();
-            Process process = ProcessStarter.NewProcess(DevconExeSelector.GetExe(), $" ENABLE \"USB\\{id}\"");
+            Process process = ProcessStarter.NewProcess(DevconExeSelector.GetExe(), $" ENABLE \"USB\\{id}\"", R.Domain, R.Username, R.Password);
             ProcessTool.SleepKill(process, 5);
             ProcessStarter.Execute(process, new Action<string>((x) =>
             {
@@ -147,7 +154,7 @@ namespace USBManager.Utils.USBUtils
         public static bool Disable(string id)
         {
             List<string> temp = new List<string>();
-            Process process = ProcessStarter.NewProcess(DevconExeSelector.GetExe(), $" DISABLE \"USB\\{id}\"");
+            Process process = ProcessStarter.NewProcess(DevconExeSelector.GetExe(), $" DISABLE \"USB\\{id}\"", R.Domain, R.Username, R.Password);
             ProcessTool.SleepKill(process, 5);
             ProcessStarter.Execute(process, new Action<string>((x) =>
             {
