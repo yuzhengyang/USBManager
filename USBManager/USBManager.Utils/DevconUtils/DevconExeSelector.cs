@@ -1,12 +1,13 @@
 ﻿using Azylee.Core.IOUtils.DirUtils;
 using Azylee.Core.WindowsUtils.InfoUtils;
 using System;
+using USBManager.Utils.Commons;
 
 namespace USBManager.Utils.DevconUtils
 {
     internal static class DevconExeSelector
     {
-        internal const string Root = @"Devcon";
+        internal static string Root = @"Devcon";
 
         internal static string GetExe()
         {
@@ -20,7 +21,8 @@ namespace USBManager.Utils.DevconUtils
                 case OSName.Windows8Or81: exe = Is64 ? WIN8.X64 : WIN8.X32; break;
                 case OSName.Windows10: exe = Is64 ? WIN10.X64 : WIN10.X32; break;
             }
-            return DirTool.Combine(AppDomain.CurrentDomain.BaseDirectory, Root, exe);
+            string file = DirTool.Combine(AppDomain.CurrentDomain.BaseDirectory, Root, exe);
+            return file;
         }
 
         protected static class XP

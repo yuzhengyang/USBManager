@@ -4,10 +4,12 @@ using Azylee.Core.WindowsUtils.RegisterUtils;
 using Microsoft.Win32;
 using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Text;
 using USBManager.Models.USBDeviceModels;
 using USBManager.Models.USBStorageModels;
+using USBManager.Utils.APIUtils;
 
 namespace USBManager.Utils.USBUtils
 {
@@ -197,6 +199,36 @@ namespace USBManager.Utils.USBUtils
                     }
                 }
             }
+        }
+        public static bool Eject(string[] volumes)
+        {
+            bool flag = true;
+            if (Ls.Ok(volumes))
+            {
+                foreach (var item in volumes)
+                {
+                    if (Str.Ok(item)) flag = flag && Eject(item);
+                }
+            }
+            return flag;
+        }
+        public static bool Ejects(string volumes)
+        {
+            if (Str.Ok(volumes))
+            {
+                return Eject(volumes.Split(','));
+            }
+            return false;
+        }
+        public static bool Eject(string drive)
+        {
+            try
+            {
+                DriveInfo Drive = new DriveInfo(drive);
+                IntPtr handle = USBAPITool.USBEject(drive);
+                return USBAPITool.Eject(handle);
+            }
+            catch { return false; }
         }
     }
 }

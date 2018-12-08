@@ -30,6 +30,15 @@
         {
             this.components = new System.ComponentModel.Container();
             this.DGVUSBList = new System.Windows.Forms.DataGridView();
+            this.DGVUSBList_Desc = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.DGVUSBList_VID = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.DGVUSBList_PID = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.DGVUSBList_InstanceID = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.DGVUSBList_Status = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.DGVUSBList_VendorName = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.DGVUSBList_ProductName = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.DGVUSBList_Storage = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.DGVUSBList_Volume = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.CMS_DGVUSBList = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.详细ToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.启用ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -51,18 +60,12 @@
             this.uSBIDWebSiteToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.statusStrip1 = new System.Windows.Forms.StatusStrip();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.DGVUSBList_Desc = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.DGVUSBList_VID = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.DGVUSBList_PID = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.DGVUSBList_InstanceID = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.DGVUSBList_Status = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.DGVUSBList_VendorName = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.DGVUSBList_ProductName = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.DGVUSBList_Storage = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.DGVUSBList_Volume = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.toolStripStatusLabel1 = new System.Windows.Forms.ToolStripStatusLabel();
+            this.toolStripStatusLabel2 = new System.Windows.Forms.ToolStripStatusLabel();
             ((System.ComponentModel.ISupportInitialize)(this.DGVUSBList)).BeginInit();
             this.CMS_DGVUSBList.SuspendLayout();
             this.MSMain.SuspendLayout();
+            this.statusStrip1.SuspendLayout();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -94,6 +97,60 @@
             this.DGVUSBList.Size = new System.Drawing.Size(767, 391);
             this.DGVUSBList.TabIndex = 0;
             this.DGVUSBList.CellMouseDown += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.DGVUSBList_CellMouseDown);
+            // 
+            // DGVUSBList_Desc
+            // 
+            this.DGVUSBList_Desc.HeaderText = "设备描述";
+            this.DGVUSBList_Desc.Name = "DGVUSBList_Desc";
+            this.DGVUSBList_Desc.ReadOnly = true;
+            // 
+            // DGVUSBList_VID
+            // 
+            this.DGVUSBList_VID.HeaderText = "厂商序号";
+            this.DGVUSBList_VID.Name = "DGVUSBList_VID";
+            this.DGVUSBList_VID.ReadOnly = true;
+            // 
+            // DGVUSBList_PID
+            // 
+            this.DGVUSBList_PID.HeaderText = "产品序号";
+            this.DGVUSBList_PID.Name = "DGVUSBList_PID";
+            this.DGVUSBList_PID.ReadOnly = true;
+            // 
+            // DGVUSBList_InstanceID
+            // 
+            this.DGVUSBList_InstanceID.HeaderText = "Instance ID";
+            this.DGVUSBList_InstanceID.Name = "DGVUSBList_InstanceID";
+            this.DGVUSBList_InstanceID.ReadOnly = true;
+            // 
+            // DGVUSBList_Status
+            // 
+            this.DGVUSBList_Status.HeaderText = "状态";
+            this.DGVUSBList_Status.Name = "DGVUSBList_Status";
+            this.DGVUSBList_Status.ReadOnly = true;
+            // 
+            // DGVUSBList_VendorName
+            // 
+            this.DGVUSBList_VendorName.HeaderText = "厂商名称";
+            this.DGVUSBList_VendorName.Name = "DGVUSBList_VendorName";
+            this.DGVUSBList_VendorName.ReadOnly = true;
+            // 
+            // DGVUSBList_ProductName
+            // 
+            this.DGVUSBList_ProductName.HeaderText = "产品名称";
+            this.DGVUSBList_ProductName.Name = "DGVUSBList_ProductName";
+            this.DGVUSBList_ProductName.ReadOnly = true;
+            // 
+            // DGVUSBList_Storage
+            // 
+            this.DGVUSBList_Storage.HeaderText = "存储设备";
+            this.DGVUSBList_Storage.Name = "DGVUSBList_Storage";
+            this.DGVUSBList_Storage.ReadOnly = true;
+            // 
+            // DGVUSBList_Volume
+            // 
+            this.DGVUSBList_Volume.HeaderText = "驱动器";
+            this.DGVUSBList_Volume.Name = "DGVUSBList_Volume";
+            this.DGVUSBList_Volume.ReadOnly = true;
             // 
             // CMS_DGVUSBList
             // 
@@ -177,7 +234,7 @@
             // 导出列表ToolStripMenuItem
             // 
             this.导出列表ToolStripMenuItem.Name = "导出列表ToolStripMenuItem";
-            this.导出列表ToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.导出列表ToolStripMenuItem.Size = new System.Drawing.Size(124, 22);
             this.导出列表ToolStripMenuItem.Text = "导出列表";
             // 
             // 查看ToolStripMenuItem
@@ -192,14 +249,14 @@
             // 刷新ToolStripMenuItem
             // 
             this.刷新ToolStripMenuItem.Name = "刷新ToolStripMenuItem";
-            this.刷新ToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.刷新ToolStripMenuItem.Size = new System.Drawing.Size(124, 22);
             this.刷新ToolStripMenuItem.Text = "刷新";
             this.刷新ToolStripMenuItem.Click += new System.EventHandler(this.刷新ToolStripMenuItem_Click);
             // 
             // 详细信息ToolStripMenuItem
             // 
             this.详细信息ToolStripMenuItem.Name = "详细信息ToolStripMenuItem";
-            this.详细信息ToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.详细信息ToolStripMenuItem.Size = new System.Drawing.Size(124, 22);
             this.详细信息ToolStripMenuItem.Text = "详细信息";
             // 
             // 帮助ToolStripMenuItem
@@ -242,6 +299,9 @@
             // 
             // statusStrip1
             // 
+            this.statusStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.toolStripStatusLabel1,
+            this.toolStripStatusLabel2});
             this.statusStrip1.Location = new System.Drawing.Point(0, 416);
             this.statusStrip1.Name = "statusStrip1";
             this.statusStrip1.Size = new System.Drawing.Size(767, 22);
@@ -257,59 +317,17 @@
             this.panel1.Size = new System.Drawing.Size(767, 391);
             this.panel1.TabIndex = 5;
             // 
-            // DGVUSBList_Desc
+            // toolStripStatusLabel1
             // 
-            this.DGVUSBList_Desc.HeaderText = "设备描述";
-            this.DGVUSBList_Desc.Name = "DGVUSBList_Desc";
-            this.DGVUSBList_Desc.ReadOnly = true;
+            this.toolStripStatusLabel1.Name = "toolStripStatusLabel1";
+            this.toolStripStatusLabel1.Size = new System.Drawing.Size(131, 17);
+            this.toolStripStatusLabel1.Text = "toolStripStatusLabel1";
             // 
-            // DGVUSBList_VID
+            // toolStripStatusLabel2
             // 
-            this.DGVUSBList_VID.HeaderText = "厂商序号";
-            this.DGVUSBList_VID.Name = "DGVUSBList_VID";
-            this.DGVUSBList_VID.ReadOnly = true;
-            // 
-            // DGVUSBList_PID
-            // 
-            this.DGVUSBList_PID.HeaderText = "产品序号";
-            this.DGVUSBList_PID.Name = "DGVUSBList_PID";
-            this.DGVUSBList_PID.ReadOnly = true;
-            // 
-            // DGVUSBList_InstanceID
-            // 
-            this.DGVUSBList_InstanceID.HeaderText = "Instance ID";
-            this.DGVUSBList_InstanceID.Name = "DGVUSBList_InstanceID";
-            this.DGVUSBList_InstanceID.ReadOnly = true;
-            // 
-            // DGVUSBList_Status
-            // 
-            this.DGVUSBList_Status.HeaderText = "状态";
-            this.DGVUSBList_Status.Name = "DGVUSBList_Status";
-            this.DGVUSBList_Status.ReadOnly = true;
-            // 
-            // DGVUSBList_VendorName
-            // 
-            this.DGVUSBList_VendorName.HeaderText = "厂商名称";
-            this.DGVUSBList_VendorName.Name = "DGVUSBList_VendorName";
-            this.DGVUSBList_VendorName.ReadOnly = true;
-            // 
-            // DGVUSBList_ProductName
-            // 
-            this.DGVUSBList_ProductName.HeaderText = "产品名称";
-            this.DGVUSBList_ProductName.Name = "DGVUSBList_ProductName";
-            this.DGVUSBList_ProductName.ReadOnly = true;
-            // 
-            // DGVUSBList_Storage
-            // 
-            this.DGVUSBList_Storage.HeaderText = "存储设备";
-            this.DGVUSBList_Storage.Name = "DGVUSBList_Storage";
-            this.DGVUSBList_Storage.ReadOnly = true;
-            // 
-            // DGVUSBList_Volume
-            // 
-            this.DGVUSBList_Volume.HeaderText = "驱动器";
-            this.DGVUSBList_Volume.Name = "DGVUSBList_Volume";
-            this.DGVUSBList_Volume.ReadOnly = true;
+            this.toolStripStatusLabel2.Name = "toolStripStatusLabel2";
+            this.toolStripStatusLabel2.Size = new System.Drawing.Size(131, 17);
+            this.toolStripStatusLabel2.Text = "toolStripStatusLabel2";
             // 
             // MainForm
             // 
@@ -328,6 +346,8 @@
             this.CMS_DGVUSBList.ResumeLayout(false);
             this.MSMain.ResumeLayout(false);
             this.MSMain.PerformLayout();
+            this.statusStrip1.ResumeLayout(false);
+            this.statusStrip1.PerformLayout();
             this.panel1.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -367,5 +387,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn DGVUSBList_ProductName;
         private System.Windows.Forms.DataGridViewTextBoxColumn DGVUSBList_Storage;
         private System.Windows.Forms.DataGridViewTextBoxColumn DGVUSBList_Volume;
+        private System.Windows.Forms.ToolStripStatusLabel toolStripStatusLabel1;
+        private System.Windows.Forms.ToolStripStatusLabel toolStripStatusLabel2;
     }
 }

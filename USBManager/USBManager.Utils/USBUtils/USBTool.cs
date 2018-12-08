@@ -54,7 +54,7 @@ namespace USBManager.Utils.USBUtils
             List<USBDeviceModel> list = null;
             List<string> temp = new List<string>();
 
-            Process process = ProcessStarter.NewProcess(DevconExeSelector.GetExe(), " FIND USB*", R.Domain, R.Username, R.Password);
+            Process process = ProcessStarter.NewProcess(DevconExeSelector.GetExe(), " FIND USB*");
             ProcessTool.SleepKill(process, 5);
             ProcessStarter.Execute(process, new Action<string>((x) =>
             {
@@ -86,7 +86,7 @@ namespace USBManager.Utils.USBUtils
             List<USBDeviceModel> list = null;
             List<string> temp = new List<string>();
 
-            Process process = ProcessStarter.NewProcess(DevconExeSelector.GetExe(), " STATUS USB*", R.Domain, R.Username, R.Password);
+            Process process = ProcessStarter.NewProcess(DevconExeSelector.GetExe(), " STATUS USB*");
             ProcessTool.SleepKill(process, 5);
             ProcessStarter.Execute(process, new Action<string>((x) =>
             {

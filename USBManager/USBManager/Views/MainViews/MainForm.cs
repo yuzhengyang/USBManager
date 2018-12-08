@@ -1,11 +1,15 @@
 ﻿using Azylee.Core.DataUtils.CollectionUtils;
+using Azylee.Core.ThreadUtils.SleepUtils;
+using Azylee.Core.WindowsUtils.AdminUtils;
 using Azylee.Core.WindowsUtils.BrowserUtils;
 using System;
 using System.Collections.Generic;
 using System.Diagnostics;
+using System.Threading.Tasks;
 using System.Windows.Forms;
 using USBManager.Commons;
 using USBManager.Models.USBDeviceModels;
+using USBManager.Utils.ConfigUtils;
 using USBManager.Utils.USBUtils;
 
 namespace USBManager.Views.MainViews
@@ -22,8 +26,12 @@ namespace USBManager.Views.MainViews
 
         private void MainForm_Load(object sender, EventArgs e)
         {
+            USBConfig.SetConfig("", "administrator", "123456");
+            if (AdminTool.CheckPassword("123456")) toolStripStatusLabel2.Text = " [admin] ";
+
             R.USBListener.Start();
             DGVUSBList_Refresh();
+            AutoRefresh();
         }
 
         #region 程序菜单
@@ -100,17 +108,29 @@ namespace USBManager.Views.MainViews
 
                 Invoke(new Action(() =>
                 {
+                    toolStripStatusLabel1.Text = DateTime.Now.ToString();
                     DGVUSBList.Rows.Clear();
                     if (Ls.Ok(R.USBListener.AllDevice))
                     {
                         foreach (var item in R.USBListener.AllDevice)
                         {
-                            DGVUSBList.Rows.Add(item.Desc, item.VID, item.PID, item.ID, item.Running ? "运行" : "禁用", item.VendorName, item.ProductName, item.IsStorage ? "存储" : "-",item.Volume);
+                            DGVUSBList.Rows.Add(item.Desc, item.VID, item.PID, item.ID, item.Running ? "运行" : "禁用", item.VendorName, item.ProductName, item.IsStorage ? "存储" : "-", item.Volume);
                         }
                     }
                 }));
             }
             catch { }
+        }
+        public void AutoRefresh()
+        {
+            Task.Factory.StartNew(() =>
+            {
+                while (true)
+                {
+                    DGVUSBList_Refresh();
+                    Sleep.S(2);
+                }
+            });
         }
         #endregion
 

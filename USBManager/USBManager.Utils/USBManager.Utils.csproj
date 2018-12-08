@@ -60,6 +60,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="APIUtils\USBAPITool.cs" />
     <Compile Include="Commons\R.cs" />
     <Compile Include="Commons\R.Files.cs" />
     <Compile Include="Commons\R.Paths.cs" />
