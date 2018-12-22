@@ -16,7 +16,7 @@ namespace USBManager.Commons
 {
     public static partial class R
     {
-        internal static string AppName = "USBManager.201811010809";
+        internal static string AppName = "USBManager.201811010809.qingdao.sifang";
         internal static string AppNameCH = "USB 管理服务";
         internal static string AppNameCHShort = "USB 管理服务";
         internal static string AppId = "";
